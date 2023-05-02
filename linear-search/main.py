@@ -7,9 +7,8 @@ def lienar_search(list, target):
         if list[i] == target:
             return i
     return None
-    
 
-def  verify(index):
+def verify(index):
     if index is not None:
         print("Target found at index: ", index)
     else:
