@@ -19,6 +19,18 @@ def insert(list, index, value):
     list[index] = value
     return True
 
+def delete(list, index):
+    if index == len(list) - 1:
+        list.pop()
+        return True
+    
+    list[index] = None
+    for i in range(index, len(list) - 1):
+        list[i] = list[i + 1]
+    list.pop()
+    return True
+
+
 my_list = [1,2,3,4]
 
 result = access(my_list, 3)
@@ -31,4 +43,10 @@ insert(my_list, 4, 10)
 print(my_list)
 
 insert(my_list, 2, 10)
+print(my_list)
+
+delete(my_list, 5)
+print(my_list)
+
+delete(my_list, 2)
 print(my_list)
