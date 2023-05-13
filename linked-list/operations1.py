@@ -101,7 +101,24 @@ class LinkedList:
 
     #=====================================================================
 
+    def pop_middle(self, position):
+        if self.head is None:
+            return None
+        
+        temp = self.head
+        prev = self.head
 
+        for i in range(position):
+            prev = temp
+            temp = temp.next
+        
+        prev.next = temp.next
+        temp.next = None
+
+        return temp
+        
+
+# append
 linked_list = LinkedList()
 linked_list.append(1)
 linked_list.append(2)
@@ -112,6 +129,7 @@ linked_list.print_list()
 
 print()
 
+# prepend
 linked_list2 = LinkedList()
 linked_list2.prepend(10)
 linked_list2.prepend(9)
@@ -122,6 +140,7 @@ linked_list2.print_list()
 
 print()
 
+# insert
 linked_list3 = LinkedList()
 linked_list3.append(0)
 linked_list3.append(1)
@@ -134,6 +153,7 @@ linked_list3.print_list()
 
 print()
 
+# pop
 linked_list4 = LinkedList()
 linked_list4.append(0)
 linked_list4.append(1)
@@ -145,6 +165,7 @@ linked_list4.print_list()
 
 print()
 
+# pop_first
 linked_list5 = LinkedList()
 linked_list5.append(0)
 linked_list5.append(1)
@@ -153,3 +174,17 @@ linked_list5.append(3)
 linked_list5.pop_first()
 
 linked_list5.print_list()
+
+print()
+
+# pop_middle
+linked_list6 = LinkedList()
+linked_list6.append(0)
+linked_list6.append(1)
+linked_list6.append(2)
+linked_list6.append(3)
+linked_list6.pop_middle(2)
+
+linked_list6.print_list()
+
+print()
