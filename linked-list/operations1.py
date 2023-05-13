@@ -1,6 +1,5 @@
 """
 append, prepend, insert, pop, pop_first, pop_middle,
-search, reverse, sort, merge
 """
 
 class Node:
