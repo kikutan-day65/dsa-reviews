@@ -66,6 +66,26 @@ class LinkedList:
             temp = temp.next
         
         return temp.data
+    
+    #=====================================================================
+    
+    def reverse(self):
+        if self.head is None:
+            return None
+        
+        prev = None
+        current = self.head
+
+        while current:
+            temp = current.next
+            current.next = prev
+            prev = current
+            current = temp
+        
+        self.head = prev
+        
+        return self.head
+
 
 # search_data
 linked_list1 = LinkedList()
@@ -89,5 +109,17 @@ linked_list2.append(3)
 
 print(linked_list2.search_at_index(0))
 print(linked_list2.search_at_index(2))
+
+print()
+
+# reverse
+linked_list3 = LinkedList()
+linked_list3.append(0)
+linked_list3.append(1)
+linked_list3.append(2)
+linked_list3.append(3)
+linked_list3.reverse()
+
+linked_list3.print_list()
 
 print()
