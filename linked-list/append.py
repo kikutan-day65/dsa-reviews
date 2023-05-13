@@ -86,6 +86,20 @@ class LinkedList:
         prev.next = None
 
         return temp
+    
+    #=====================================================================
+
+    def pop_first(self):
+        if self.head is None:
+            return None
+        
+        temp = self.head
+        self.head = temp.next
+        temp.next = None
+
+        return temp
+
+    #=====================================================================
 
 
 linked_list = LinkedList()
@@ -128,3 +142,14 @@ linked_list4.append(3)
 linked_list4.pop()
 
 linked_list4.print_list()
+
+print()
+
+linked_list5 = LinkedList()
+linked_list5.append(0)
+linked_list5.append(1)
+linked_list5.append(2)
+linked_list5.append(3)
+linked_list5.pop_first()
+
+linked_list5.print_list()
