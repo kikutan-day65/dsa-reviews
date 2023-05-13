@@ -70,6 +70,13 @@ class LinkedList:
     #=====================================================================
     
     def reverse(self):
+        """
+        steps:
+            1. store current.next in temp
+            2. current.next points to prev
+            3. prev is current
+            4. current is temp
+        """
         if self.head is None:
             return None
         
@@ -83,7 +90,7 @@ class LinkedList:
             current = temp
         
         self.head = prev
-        
+
         return self.head
 
 
