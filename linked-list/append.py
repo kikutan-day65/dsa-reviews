@@ -1,3 +1,8 @@
+"""
+append, prepend, insert, pop, pop_first, pop_middle,
+search, reverse, sort, merge
+"""
+
 class Node:
     def __init__(self, data):
         self.data = data
@@ -68,6 +73,19 @@ class LinkedList:
     
     #=====================================================================
 
+    def pop(self):
+        if self.head is None:
+            return None
+        
+        temp = self.head
+        prev = self.head
+        while temp.next:
+            prev = temp
+            temp = temp.next
+        
+        prev.next = None
+
+        return temp
 
 
 linked_list = LinkedList()
@@ -99,3 +117,14 @@ linked_list3.insert(10, 2)
 linked_list3.insert(10, 5)
 
 linked_list3.print_list()
+
+print()
+
+linked_list4 = LinkedList()
+linked_list4.append(0)
+linked_list4.append(1)
+linked_list4.append(2)
+linked_list4.append(3)
+linked_list4.pop()
+
+linked_list4.print_list()
