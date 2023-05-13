@@ -1,5 +1,5 @@
 """
-search, reverse, sort, merge
+search, reverse
 """
 
 class Node:
