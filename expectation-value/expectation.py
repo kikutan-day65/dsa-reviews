@@ -10,9 +10,7 @@ def expectation(n1, n2):
 
     for i in range(len(n1)):
         dividend1 += n1[i]
-    
-    for j in range(len(n2)):
-        dividend2 += n2[j]
+        dividend2 += n2[i]
     
     x = dividend1 // len(n1)
     y = dividend2 // len(n2)
