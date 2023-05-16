@@ -19,6 +19,19 @@ class DoublyLinkedList:
     
     #============================================
 
+    def list_length(self):
+        if self.head == None:
+            return 0
+
+        length = 0
+        temp = self.head
+        while temp:
+            length += 1
+            temp = temp.next
+        return length
+
+    #============================================
+
     def append(self, data):
         new_node = Node(data)
 
@@ -53,6 +66,26 @@ class DoublyLinkedList:
     
     #============================================
 
+    def insert(self, data, position):
+        if position == 0:
+            return self.prepend(data)
+        
+        elif position == self.list_length():
+            return self.append(data)
+        
+        new_node = Node(data)
+
+        temp = self.head
+        for i in range(position - 1):
+            temp = temp.next
+        
+        new_node.next = temp.next
+        temp.next.prev = new_node
+        temp.next = new_node
+        new_node.prev = temp
+
+        return True
+
     
 linked_list = DoublyLinkedList()
 linked_list.append(0)
@@ -73,5 +106,17 @@ linked_list2.prepend(-1)
 linked_list2.prepend(-2)
 
 linked_list2.print_list()
+
+print()
+
+linked_list3 = DoublyLinkedList()
+linked_list3.append(0)
+linked_list3.append(1)
+linked_list3.append(2)
+linked_list3.append(3)
+linked_list3.insert(10, 2)
+linked_list3.insert(20, 5)
+
+linked_list3.print_list()
 
 print()
