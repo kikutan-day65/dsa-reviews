@@ -108,6 +108,27 @@ class DoublyLinkedList:
 
         return temp
 
+    #============================================
+
+    def pop_first(self):
+        if self.head == None:
+            return None
+        
+        temp = self.head
+
+        if self.head.next == None:
+            self.head = None
+            return temp
+        
+        self.head = temp.next
+        self.head.prev = None
+        temp.next = None
+
+        return temp
+    
+    #============================================
+    
+
     
 linked_list = DoublyLinkedList()
 linked_list.append(0)
@@ -151,5 +172,16 @@ linked_list4.append(3)
 linked_list4.pop()
 
 linked_list4.print_list()
+
+print()
+
+linked_list5 = DoublyLinkedList()
+linked_list5.append(0)
+linked_list5.append(1)
+linked_list5.append(2)
+linked_list5.append(3)
+linked_list5.pop_first()
+
+linked_list5.print_list()
 
 print()
