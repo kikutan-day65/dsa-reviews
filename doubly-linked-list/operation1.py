@@ -127,6 +127,33 @@ class DoublyLinkedList:
         return temp
     
     #============================================
+
+    def pop_middle(self, position):
+        if self.head == None:
+            return None
+
+        if position < 0 or position >= self.list_length():
+            return None
+
+        if position == 0:
+            return self.pop_first()
+
+        if position == self.list_length() - 1:
+            return self.pop()
+
+        temp = self.head
+        before = self.head
+        for i in range(position):
+            before = temp
+            temp = temp.next
+
+        before.next = temp.next
+        temp.next.prev = before
+        temp.prev = None
+        temp.next = None
+
+        return temp
+
     
 
     
@@ -185,3 +212,12 @@ linked_list5.pop_first()
 linked_list5.print_list()
 
 print()
+
+linked_list6 = DoublyLinkedList()
+linked_list6.append(0)
+linked_list6.append(1)
+linked_list6.append(2)
+linked_list6.append(3)
+linked_list6.pop_middle(2)
+
+linked_list6.print_list()
