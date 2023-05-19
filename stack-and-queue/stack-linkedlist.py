@@ -31,12 +31,36 @@ class Stack:
         self.root = new_node
 
         return True
+    
+    #================================
+    
+    def pop_first(self):
+        if self.is_empty():
+            raise IndexError("Stack is empty")
+        
+        temp = self.root
+        self.root = self.root.next
+        temp.next = None
+
+        return temp
+
 
 
 stack1 = Stack()
 stack1.push(0)
 stack1.push(1)
 stack1.push(2)
-print(stack1.is_empty())
+stack1.push(3)
 
 stack1.print_stack()
+
+print()
+
+stack2 = Stack()
+stack2.push(0)
+stack2.push(1)
+stack2.push(2)
+stack2.push(3)
+stack2.pop_first()
+
+stack2.print_stack()
