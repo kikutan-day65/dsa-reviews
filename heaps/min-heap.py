@@ -64,3 +64,17 @@ class MinHeap:
         temp = self.storage[index1]
         self.storage[index1] = self.storage[index2]
         self.storage[index2] = temp
+
+    #======================================================
+    
+    def insert(self, data):
+        if self.is_full():
+            raise("Heap is full")
+        
+        self.storage[self.size] = data
+        self.size += 1
+        self.heapify_up()
+
+    #======================================================
+    
+    
