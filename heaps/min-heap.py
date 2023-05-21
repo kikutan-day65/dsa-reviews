@@ -14,3 +14,15 @@ class MinHeap:
         self.storage = [0] * capacity
         self.capacity + capacity
         self.size = 0
+
+
+    def get_parent_index(self, index):
+        return (index - 1) // 2
+    
+
+    def get_left_child_index(self, index):
+        return 2 * index + 1
+    
+
+    def  get_right_child_index(self, index):
+        return 2 * index + 2
