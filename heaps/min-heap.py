@@ -55,3 +55,12 @@ class MinHeap:
         return self.storage[self.get_right_child_index(index)]
     
     #======================================================
+
+    def is_full(self):
+        return self.size == self.capacity
+    
+
+    def swap(self, index1, index2):
+        temp = self.storage[index1]
+        self.storage[index1] = self.storage[index2]
+        self.storage[index2] = temp
