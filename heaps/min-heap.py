@@ -42,3 +42,16 @@ class MinHeap:
         return self.get_right_child_index(index) < self.size
     
     #======================================================
+
+    def parent(self, index):
+        return self.storage[self.get_parent_index(index)]
+    
+
+    def left_child(self, index):
+        return self.storage[self.get_left_child_index(index)]
+    
+
+    def right_cihld(self, index):
+        return self.storage[self.get_right_child_index(index)]
+    
+    #======================================================
