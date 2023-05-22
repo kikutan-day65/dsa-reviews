@@ -77,4 +77,11 @@ class MinHeap:
 
     #======================================================
     
+    def heapify_up(self):
+        index = self.size - 1
+
+        while self.has_parent(index) and self.parent(index) > self.storage[index]:
+            self.swap(self.get_parent_index(index), index)
+            index = self.get_parent_index(index)
     
+    #======================================================
