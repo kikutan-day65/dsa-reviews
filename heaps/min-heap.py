@@ -42,7 +42,8 @@ class MinHeap:
         return self.get_right_child_index(index) < self.size
     
     #======================================================
-
+    # get actual value here
+    
     def parent(self, index):
         return self.storage[self.get_parent_index(index)]
     
@@ -78,10 +79,11 @@ class MinHeap:
     #======================================================
     
     def heapify_up(self):
-        index = self.size - 1
+        index = self.size - 1   # index of the last element in the heap 
 
         while self.has_parent(index) and self.parent(index) > self.storage[index]:
             self.swap(self.get_parent_index(index), index)
             index = self.get_parent_index(index)
     
     #======================================================
+
